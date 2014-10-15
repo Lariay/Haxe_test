@@ -1,0 +1,5 @@
+ {
+ 	"sounds" : [
+ 		{"id" : "assets/click.ogg", "name" : "click", "is_stream" : false}
+ 	]
+ }
