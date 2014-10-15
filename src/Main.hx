@@ -109,56 +109,25 @@ class Main extends luxe.Game {
         Luxe.input.add ("click", MouseButton.left);
     } 
 
+    function clickPianoKeys (numberPiano: Sprite, nubmerSound: String)
+    {
+     if(mouseX >= numberPiano.pos.x - pianoXStart &&
+         mouseX <= numberPiano.pos.x + pianoWidth /2 &&
+          mouseY >= numberPiano.pos.y - pianoHeight/2 &&
+           mouseY <= numberPiano.pos.x + pianoHeight &&
+            Luxe.input.mousepressed (1)) {
+            Luxe.audio.play(nubmerSound);
+        }
+    }
+
     override function update( delta:Float ) {
-        if(mouseX >= piano_key1.pos.x - pianoXStart &&
-         mouseX <= piano_key1.pos.x + pianoWidth /2 &&
-          mouseY >= piano_key1.pos.y - pianoHeight/2 &&
-           mouseY <= piano_key1.pos.x + pianoHeight &&
-            Luxe.input.mousepressed (1)) {
-            Luxe.audio.play("octave_a");
-        }
-        if(mouseX >= piano_key2.pos.x - pianoXStart &&
-         mouseX <= piano_key2.pos.x + pianoWidth /2 &&
-          mouseY >= piano_key2.pos.y - pianoHeight/2 &&
-           mouseY <= piano_key2.pos.x + pianoHeight &&
-            Luxe.input.mousepressed (1)) {
-            Luxe.audio.play("octave_b");
-        }
-        if(mouseX >= piano_key3.pos.x - pianoXStart &&
-         mouseX <= piano_key3.pos.x + pianoWidth /2 &&
-          mouseY >= piano_key3.pos.y - pianoHeight/2 &&
-           mouseY <= piano_key3.pos.x + pianoHeight &&
-            Luxe.input.mousepressed (1)) {
-            Luxe.audio.play("octave_c");
-        }
-        if(mouseX >= piano_key4.pos.x - pianoXStart &&
-         mouseX <= piano_key4.pos.x + pianoWidth /2 &&
-          mouseY >= piano_key4.pos.y - pianoHeight/2 &&
-           mouseY <= piano_key4.pos.x + pianoHeight &&
-            Luxe.input.mousepressed (1)) {
-            Luxe.audio.play("octave_d");
-        }
-        if(mouseX >= piano_key5.pos.x - pianoXStart &&
-         mouseX <= piano_key5.pos.x + pianoWidth /2 &&
-          mouseY >= piano_key5.pos.y - pianoHeight/2 &&
-           mouseY <= piano_key5.pos.x + pianoHeight &&
-            Luxe.input.mousepressed (1)) {
-            Luxe.audio.play("octave_e");
-        }
-        if(mouseX >= piano_key6.pos.x - pianoXStart &&
-         mouseX <= piano_key6.pos.x + pianoWidth /2 &&
-          mouseY >= piano_key6.pos.y - pianoHeight/2 &&
-           mouseY <= piano_key6.pos.x + pianoHeight &&
-            Luxe.input.mousepressed (1)) {
-            Luxe.audio.play("octave_f");
-        }
-        if(mouseX >= piano_key7.pos.x - pianoXStart &&
-         mouseX <= piano_key7.pos.x + pianoWidth /2 &&
-          mouseY >= piano_key7.pos.y - pianoHeight/2 &&
-           mouseY <= piano_key7.pos.x + pianoHeight &&
-            Luxe.input.mousepressed (1)) {
-            Luxe.audio.play("octave_g");
-        }
+        clickPianoKeys (piano_key1, "octave_a");
+        clickPianoKeys (piano_key2, "octave_b");
+        clickPianoKeys (piano_key3, "octave_c");
+        clickPianoKeys (piano_key4, "octave_d");
+        clickPianoKeys (piano_key5, "octave_e");
+        clickPianoKeys (piano_key6, "octave_f");
+        clickPianoKeys (piano_key7, "octave_g");
         
     } //update
 
@@ -174,3 +143,6 @@ class Main extends luxe.Game {
 
 
 } //Main
+
+
+
