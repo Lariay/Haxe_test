@@ -108,7 +108,7 @@ class Main extends luxe.Game {
         piano_key3.flipx = true;
         piano_key5.flipx = true;
         piano_key7.flipx = true;
-    } //onthunder
+    }
 
     function showText () {
         textKey = new Text({
@@ -182,7 +182,7 @@ class Main extends luxe.Game {
             textKey.text = "si";
         }
 
-    } //onkeyup
+    }
 
     override function onmousemove (e: MouseEvent) {
         mouseX = e.pos.x;
